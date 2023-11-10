@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Task } from './task/task';
 import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskDialogComponent, TaskDialogResult } from './task-dialog/task-dialog.component';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html', 
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
 
-  constructor (private dialog: MatDialog, private store: AngularFirestore) {}
+  constructor(private dialog: MatDialog, @Inject(AngularFirestore) private store: AngularFirestore) {}
 
   title = 'pearAB';
 
@@ -55,7 +55,7 @@ export class AppComponent {
         if (!result) {
           return;
         }
-        this.todo.push(result.task);
+        // this.todo.push(result.task);
       });
   }
 

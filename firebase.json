@@ -1,1 +1,10 @@
-{}
+{
+  "functions": {
+    "source": "functions"
+  },
+  "database": {
+    "rules": "y"
+  },
+  "remoteconfig": {},
+  "extensions": {}
+}

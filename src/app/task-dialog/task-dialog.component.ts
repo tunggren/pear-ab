@@ -5,7 +5,7 @@ import { Task } from '../task/task';
 @Component({
   selector: 'app-task-dialog',
   templateUrl: './task-dialog.component.html',
-  styleUrls: ['./task-dialog.component.css'],
+  styleUrls: ['./task-dialog.component.sass'],
 })
 
 export class TaskDialogComponent {

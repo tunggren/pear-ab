@@ -7,14 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
-import { InventoryManagerComponent } from './inventory-manager/inventory-manager.component';
-
+import { TaskComponent } from './task/task.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TaskDialogComponent } from './task-dialog/task-dialog.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoryManagerComponent,
+    TaskComponent,
+    TaskDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,11 @@ import { InventoryManagerComponent } from './inventory-manager/inventory-manager
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    
+    DragDropModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

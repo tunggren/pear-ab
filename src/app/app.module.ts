@@ -14,7 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
 @NgModule({
@@ -34,7 +33,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     MatInputModule,
     FormsModule,
     MatFormFieldModule,
-    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

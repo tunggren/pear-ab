@@ -64,7 +64,6 @@ export class AppComponent {
         if (!result) {
           return;
         }
-         this.todo.push(result.task);
       });
   }
 

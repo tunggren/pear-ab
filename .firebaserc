@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "pear-ab-58438"
+  },
+  "targets": {
+    "pear-ab-58438": {
+      "hosting": {
+        "pearAB": [
+          "pear-ab-58438"
+        ]
+      }
+    }
   }
 }

@@ -16,14 +16,15 @@
         id="todo"
         #todoList="cdkDropList"
         [cdkDropListData]="todo"
-        [cdkDropListConnectedTo]="[doneList, inProgressList]"
+        [cdkDropListConnectedTo]="[doneList, inProgress$ | async]"
         (cdkDropListDropped)="drop($event)"
         class="list"
       >
-        <p class="empty-label" *ngIf="todo.length === 0">Empty list</p>
+        <p class="empty-label" *ngIf="(todo$ | async)?.length === 0"
+        >Empty list</p>
         <app-task
           (edit)="editTask('todo', $event)"
-          *ngFor="let task of todo"
+          *ngFor="let task of todo$ | async | slice:0"
           cdkDrag
           [task]="task"
         ></app-task>
@@ -38,7 +39,7 @@
         id="todo"
         #todoList="cdkDropList"
         [cdkDropListData]="todo | async"
-        [cdkDropListConnectedTo]="[doneList, inProgressList]"
+        [cdkDropListConnectedTo]="[doneList, inProgress$ | async]"
         (cdkDropListDropped)="drop($event)"
         class="list"
       >

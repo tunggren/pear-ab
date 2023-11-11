@@ -6,5 +6,12 @@
     "rules": "y"
   },
   "remoteconfig": {},
-  "extensions": {}
+  "extensions": {},
+  "hosting": [
+    {
+      "target": "pearAB",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
 }

@@ -8,23 +8,19 @@ import { InventoryService } from '../services/inventory-service';
 })
 
 export class InventoryComponent implements OnInit {
-  inventory!: any[];
+  inventoryData!: any[];
 
   constructor(private inventoryService: InventoryService) {}
 
   ngOnInit(): void {
-    this.loadInventory();
-  }
-
-  loadInventory(): void {
-    this.inventoryService.getInventory().subscribe((data) => {
-      this.inventory = data;
-    });
-  }
-
-  updateInventory(name: string, quantity: number): void {
-    this.inventoryService.updateInventory({ name, quantity }).subscribe(() => {
-      this.loadInventory();
-    });
+    this.inventoryService.getInventory().subscribe({
+      next: (data) => {
+        this.inventoryData = data;
+        console.log('Retrieved data:', data);
+      },
+      error: (error) => {
+        console.error('Error retrieving data:', error);
+      }
+    });    
   }
 }

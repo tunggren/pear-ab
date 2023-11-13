@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -15,12 +14,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { InventoryComponent } from './inventory/inventory.component';
+import { InventoryItemsComponent } from './inventory-items/inventory-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoryComponent,
+    InventoryItemsComponent,
   ],
   imports: [
     BrowserModule,

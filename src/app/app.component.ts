@@ -15,9 +15,4 @@ export class AppComponent {
 
   title = 'pearAB';
 
-  goToInventory() {
-    this.router.navigate(['/inventory']);
-  }
-  
- 
 } 

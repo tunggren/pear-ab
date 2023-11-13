@@ -15,11 +15,19 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InventoryItemsComponent } from './inventory-items/inventory-items.component';
+import { DatedTransactionsComponent } from './dated-transactions/dated-transactions.component';
+import { InitialBalanceTransactionsComponent } from './initial-balance-transactions/initial-balance-transactions.component';
+import { ProductsComponent } from './products/products.component';
+import { WarehousesComponent } from './warehouses/warehouses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryItemsComponent,
+    DatedTransactionsComponent,
+    InitialBalanceTransactionsComponent,
+    ProductsComponent,
+    WarehousesComponent,
   ],
   imports: [
     BrowserModule,

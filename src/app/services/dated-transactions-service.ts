@@ -31,8 +31,6 @@ export class DatedTransactionsService {
       );
   }
   
-  
-
   deleteDatedTransaction(id: string): Observable<any> {
     const url = `${this.apiUrlDatedTransactions}/${id}`;
     return this.http.delete<void>(url);

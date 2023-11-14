@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -16,12 +16,19 @@ export class InventoryItemsService {
     return this.http.get<any[]>(this.apiUrlInventoryItems);
   }
 
-  updateInventoryItems(item: { Product: String; Balance: Number, Warehouse: String }): Observable<void> {
-    return this.http.put<void>(this.apiUrlInventoryItems, item);
+  updateInventoryItems(item: { _id: string, Product: String; Balance: Number, Warehouse: String }): Observable<void> {
+    const url = `${this.apiUrlInventoryItems}/${item._id}`;
+    return this.http.put<void>(url, item);
   }
 
   addInventoryItem(item: { Product: String; Balance: Number, Warehouse: String }): Observable<any> {
-    return this.http.post(this.apiUrlInventoryItems, item);
+    return this.http.post<void>(this.apiUrlInventoryItems, item)
+    .pipe(
+      catchError((error) => {
+        console.error('Error adding dated transaction:', error);
+        throw error; 
+      })
+    );
   }
 
   deleteInventoryItem(id: string): Observable<any> {

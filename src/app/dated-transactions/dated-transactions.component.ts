@@ -73,6 +73,7 @@ export class DatedTransactionsComponent implements OnInit {
   }): void {
     this.datedTransactionsService.addDatedTransaction(item).subscribe(() => {
       this.refreshData();
+      this.openSnackBar('Transaktionen är nu tillagd!');
     });
   }
 

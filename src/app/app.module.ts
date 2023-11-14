@@ -26,6 +26,10 @@ import { ProductsService } from './services/products-service';
 import { WarehousesService } from './services/warehouses-service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DatedTransactionDialogComponent } from './dated-transactions/dated-transaction-dialog/dated-transaction-dialog.component';
+import { InitialBalanceTransactionsDialogComponent } from './initial-balance-transactions/initial-balance-transactions-dialog/initial-balance-transactions-dialog.component';
+import { InventoryItemsDialogComponent } from './inventory-items/inventory-items-dialog/inventory-items-dialog.component';
+import { ProductsDialogComponent } from './products/products-dialog/products-dialog.component';
+import { WarehousesDialogComponent } from './warehouses/warehouses-dialog/warehouses-dialog.component';
 
 
 @NgModule({
@@ -37,6 +41,10 @@ import { DatedTransactionDialogComponent } from './dated-transactions/dated-tran
     ProductsComponent,
     WarehousesComponent,
     DatedTransactionDialogComponent,
+    InitialBalanceTransactionsDialogComponent,
+    InventoryItemsDialogComponent,
+    ProductsDialogComponent,
+    WarehousesDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,11 @@ import { DatedTransactionsComponent } from './dated-transactions/dated-transacti
 import { InitialBalanceTransactionsComponent } from './initial-balance-transactions/initial-balance-transactions.component';
 import { ProductsComponent } from './products/products.component';
 import { WarehousesComponent } from './warehouses/warehouses.component';
+import { DatedTransactionsService } from './services/dated-transactions-service';
+import { InitialBalanceTransactionsService } from './services/initial-balance-transactions';
+import { InventoryItemsService } from './services/inventory-items-service';
+import { ProductsService } from './services/products-service';
+import { WarehousesService } from './services/warehouses-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,13 @@ import { WarehousesComponent } from './warehouses/warehouses.component';
     MatFormFieldModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DatedTransactionsService,
+    InitialBalanceTransactionsService,
+    InventoryItemsService,
+    ProductsService,
+    WarehousesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

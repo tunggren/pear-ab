@@ -1,1 +1,9 @@
-<p>dated-transactions works!</p>
+<div *ngFor="let item of datedTransactionsData">
+    <p>
+      {{ "Datum: " + item.Date }} <br />
+      {{ "Produktnamn: " + item.Product }} <br />
+      {{ "Typ av transaktion: " + item.Type }} <br />
+      {{ "Färdigvarulager: " + item.Location }} <br />
+      {{ "Antal: " + item.Quantity }}
+    </p>
+  </div>

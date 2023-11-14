@@ -1,1 +1,9 @@
-<p>initial-balance-transactions works!</p>
+<div *ngFor="let item of initialBalanceTransactionsData">
+    <p>
+      {{ "Produktnamn: " + item.Product }} <br />
+      {{ "Antal: " + item.Quantity }} <br />
+      {{ "Typ av transaktion: " + item.Type }} <br />
+      {{ "Färdigvarulager: " + item.Location }}
+    </p>
+  </div>
+  

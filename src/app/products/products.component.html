@@ -1,1 +1,8 @@
-<p>products works!</p>
+<div *ngFor="let item of productsData">
+    <p>
+      {{ "Produktnummer: " + item.Productnr }} <br />
+      {{ "Produktnamn: " + item.Name }} <br />
+      {{ "Pris: " + item.Price }} 
+    </p>
+  </div>
+  

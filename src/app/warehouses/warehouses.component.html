@@ -1,1 +1,7 @@
-<p>warehouses works!</p>
+<div *ngFor="let item of warehousesData">
+    <p>
+      {{ "Lagernamn: " + item.Location }} <br />
+      {{ "Lagernummer: " + item.Warehousenr }} 
+    </p>
+  </div>
+  

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MatDialog } from '@angular/material/dialog';
 import { DatedTransactionDialogComponent } from './dated-transaction-dialog/dated-transaction-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,8 +9,10 @@ import { DatedTransactionsService } from '../services/dated-transactions-service
   templateUrl: './dated-transactions.component.html',
   styleUrls: ['./dated-transactions.component.sass'],
 })
+
 export class DatedTransactionsComponent implements OnInit {
-  datedTransactionsData!: any[];
+
+  datedTransactionsData: any[] = [];
 
   constructor(
     private snackBar: MatSnackBar,

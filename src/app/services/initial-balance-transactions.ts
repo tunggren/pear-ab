@@ -26,7 +26,7 @@ export class InitialBalanceTransactionsService {
 
   deleteInitialBalanceTransaction(id: string): Observable<any> {
     const url = `${this.apiUrlInitialBalanceTransactions}/${id}`;
-    return this.http.delete(url);
+    return this.http.delete<void>(url);
   }
 
 }

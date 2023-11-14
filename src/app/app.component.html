@@ -6,26 +6,26 @@
 <div class="content-wrapper">
   <div class="container-wrapper">
     <div class="container">
-      <button mat-button routerLink="/products">Produkter</button>
+      <button mat-button routerLink="/products"><h2>Produkter</h2></button>
     </div>
 
     <div class="container">
-      <button mat-button routerLink="/warehouses">Färdigvarulager</button>
+      <button mat-button routerLink="/warehouses"><h2>Färdigvarulager</h2></button>
     </div>
 
     <div class="container">
-      <button mat-button routerLink="/inventoryitems">Lagersaldon</button>
+      <button mat-button routerLink="/inventoryitems"><h2>Lagersaldon</h2></button>
     </div>
 
     <div class="container">
       <button mat-button routerLink="/initialbalancetransactions">
-        Starttransaktioner
+        <h2>Transaktioner</h2>
       </button>
     </div>
 
     <div class="container">
       <button mat-button routerLink="/datedtransactions">
-        Transaktioner med datum
+        <h2>Transaktioner med datum</h2>
       </button>
     </div>
   </div>
@@ -35,17 +35,3 @@
   <router-outlet></router-outlet>
 </div>
 
-<div class="datbuttons">
-  <div class="container-button">
-    <button mat-button><mat-icon>add</mat-icon>Lägg till</button>
-  </div>
-
-  <div class="container-button">
-    <button mat-button><mat-icon>edit</mat-icon>
-      Ändra</button>
-  </div>
-
-  <div class="container-button">
-    <button mat-button><mat-icon>delete</mat-icon>Ta bort</button>
-  </div>
-</div>

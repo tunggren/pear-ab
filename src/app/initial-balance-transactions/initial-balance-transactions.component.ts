@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InitialBalanceTransactionsService } from '../services/initial-balance-transactions';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-initial-balance-transactions',
@@ -10,7 +11,7 @@ import { InitialBalanceTransactionsService } from '../services/initial-balance-t
 export class InitialBalanceTransactionsComponent implements OnInit {
   initialBalanceTransactionsData!: any[];
 
-  constructor(private initialBalanceTransactionsService: InitialBalanceTransactionsService) {}
+  constructor(private snackBar: MatSnackBar, private initialBalanceTransactionsService: InitialBalanceTransactionsService) {}
 
   ngOnInit(): void {
     this.initialBalanceTransactionsService.getInitialBalanceTransactions().subscribe({
@@ -23,4 +24,26 @@ export class InitialBalanceTransactionsComponent implements OnInit {
       }
     });  
   }
+
+  updateInitialBalanceTransaction(item: { _id: string, Product: string, Quantity: number, Type: string, Location: string }): void {
+    this.initialBalanceTransactionsService.updateInitialBalanceTransactions(item)
+      .subscribe(() => {
+        this.initialBalanceTransactionsService.getInitialBalanceTransactions();
+      });
+  }
+
+  addInitialBalanceTransaction(item: { Product: string, Quantity: number, Type: string, Location: string }): void {
+    this.initialBalanceTransactionsService.addInitialBalanceTransaction(item)
+      .subscribe(() => {
+        this.initialBalanceTransactionsService.getInitialBalanceTransactions();      
+    });
+  }
+
+  deleteInitialBalanceTransaction(id: string): void {
+    this.initialBalanceTransactionsService.deleteInitialBalanceTransaction(id)
+      .subscribe(() => {
+        this.initialBalanceTransactionsService.getInitialBalanceTransactions();      
+    });
+  }
+
 }

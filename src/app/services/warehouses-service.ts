@@ -26,7 +26,7 @@ export class WarehousesService {
 
   deleteWarehouse(id: string): Observable<any> {
     const url = `${this.apiUrlWarehouses}/${id}`;
-    return this.http.delete(url);
+    return this.http.delete<void>(url);
   }
 
 }

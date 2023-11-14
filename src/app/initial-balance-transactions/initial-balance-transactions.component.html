@@ -1,9 +1,23 @@
 <div *ngFor="let item of initialBalanceTransactionsData">
-    <p>
-      {{ "Produktnamn: " + item.Product }} <br />
-      {{ "Antal: " + item.Quantity }} <br />
-      {{ "Typ av transaktion: " + item.Type }} <br />
-      {{ "Färdigvarulager: " + item.Location }}
-    </p>
+    <mat-card class="data-card">
+      <mat-card-content>
+        <mat-form-field>
+          <textarea matInput placeholder="Produktnamn" [(ngModel)]="item.Product"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Antal" [(ngModel)]="item.Quantity"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Typ av transaktion" [(ngModel)]="item.Type"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Färdigvarulager" [(ngModel)]="item.Location"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="updateInitialBalanceTransaction(item)">Uppdatera</button>
+        <button mat-button (click)="deleteInitialBalanceTransaction(item._id)">Ta bort</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
   

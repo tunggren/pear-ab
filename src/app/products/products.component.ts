@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductsService } from '../services/products-service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit {
 
   initialBalanceTransactionsData!: any[];
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private snackBar: MatSnackBar, private productsService: ProductsService) {}
 
   productsData!: any[];
 

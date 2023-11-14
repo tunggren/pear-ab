@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InventoryItemsService } from '../services/inventory-items-service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-inventory-items',
@@ -13,7 +14,7 @@ export class InventoryItemsComponent implements OnInit {
   inventoryItemsData!: any[];
 
 
-  constructor(private inventoryItemsService: InventoryItemsService) {}
+  constructor(private snackBar: MatSnackBar, private inventoryItemsService: InventoryItemsService) {}
 
   ngOnInit(): void {
 

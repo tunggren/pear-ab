@@ -17,11 +17,16 @@ export class ProductsService {
   }
 
   updateProducts(item: { Productnr: String; Price: Number, Name: String }): Observable<void> {
-    return this.http.post<void>(this.apiUrlProducts, item);
+    return this.http.put<void>(this.apiUrlProducts, item);
   }
 
   addProduct(item: { Productnr: String; Price: Number, Name: String }): Observable<any> {
     return this.http.post(this.apiUrlProducts, item);
+  }
+
+  deleteProduct(id: string): Observable<any> {
+    const url = `${this.apiUrlProducts}/${id}`;
+    return this.http.delete(url);
   }
 
 }

@@ -17,11 +17,15 @@ export class InventoryItemsService {
   }
 
   updateInventoryItems(item: { Product: String; Balance: Number, Warehouse: String }): Observable<void> {
-    return this.http.post<void>(this.apiUrlInventoryItems, item);
+    return this.http.put<void>(this.apiUrlInventoryItems, item);
   }
 
   addInventoryItem(item: { Product: String; Balance: Number, Warehouse: String }): Observable<any> {
     return this.http.post(this.apiUrlInventoryItems, item);
   }
 
+  deleteInventoryItem(id: string): Observable<any> {
+    const url = `${this.apiUrlInventoryItems}/${id}`;
+    return this.http.delete(url);
+  }
 }

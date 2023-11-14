@@ -17,11 +17,16 @@ export class InitialBalanceTransactionsService {
   }
 
   updateInitialBalanceTransactions(item: { Product: String, Quantity: Number, Type: String, Location: String }): Observable<void> {
-    return this.http.post<void>(this.apiUrlInitialBalanceTransactions, item);
+    return this.http.put<void>(this.apiUrlInitialBalanceTransactions, item);
   }
 
   addInitialBalanceTransaction(item: { Product: String, Quantity: Number, Type: String, Location: String }): Observable<any> {
     return this.http.post(this.apiUrlInitialBalanceTransactions, item);
+  }
+
+  deleteInitialBalanceTransaction(id: string): Observable<any> {
+    const url = `${this.apiUrlInitialBalanceTransactions}/${id}`;
+    return this.http.delete(url);
   }
 
 }

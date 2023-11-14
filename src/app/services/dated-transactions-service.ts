@@ -17,11 +17,16 @@ export class DatedTransactionsService {
   }
 
   updateDatedTransactions(item: { Date: Date, Product: String, Type: String, Location: String, Quantity: Number }): Observable<void> {
-    return this.http.post<void>(this.apiUrlDatedTransactions, item);
+    return this.http.put<void>(this.apiUrlDatedTransactions, item);
   }
 
   addDatedTransaction(item: { Date: Date, Product: String, Type: String, Location: String, Quantity: Number }): Observable<any> {
     return this.http.post(this.apiUrlDatedTransactions, item);
+  }
+
+  deleteDatedTransaction(id: string): Observable<any> {
+    const url = `${this.apiUrlDatedTransactions}/${id}`;
+    return this.http.delete(url);
   }
 
 }

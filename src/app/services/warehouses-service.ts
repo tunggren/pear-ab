@@ -17,11 +17,16 @@ export class WarehousesService {
   }
 
   updateWarehouses(item: { Location: String, Warehousenr: String }): Observable<void> {
-    return this.http.post<void>(this.apiUrlWarehouses, item);
+    return this.http.put<void>(this.apiUrlWarehouses, item);
   }
 
   addWarehouse(item: { Location: String, Warehousenr: String }): Observable<any> {
     return this.http.post(this.apiUrlWarehouses, item);
+  }
+
+  deleteWarehouse(id: string): Observable<any> {
+    const url = `${this.apiUrlWarehouses}/${id}`;
+    return this.http.delete(url);
   }
 
 }

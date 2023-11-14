@@ -1,8 +1,48 @@
 <div *ngFor="let item of productsData">
-    <p>
-      {{ "Produktnummer: " + item.Productnr }} <br />
-      {{ "Produktnamn: " + item.Name }} <br />
-      {{ "Pris: " + item.Price }} 
-    </p>
+  <mat-card class="data-card">
+    <mat-card-content>
+      <mat-form-field>
+        <h3>Produktnummer</h3>
+        <input
+          matInput
+          placeholder="Produktnummer"
+          [(ngModel)]="item.Productnr"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <h3>Produktnamn</h3>
+        <input matInput placeholder="Produktnamn" [(ngModel)]="item.Name" />
+      </mat-form-field>
+      <mat-form-field>
+        <h3>Pris</h3>
+        <input matInput placeholder="Pris" [(ngModel)]="item.Price" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="buttons" routerLink="/products">
+      <button
+        mat-raised-button
+        class="updatebtn"
+        mat-button
+        (click)="updateProduct(item)"
+      >
+        <mat-icon>update</mat-icon> Uppdatera produkt
+      </button>
+      <button
+        mat-raised-button
+        class="deletebtn"
+        mat-button
+        (click)="deleteProduct(item._id)"
+      >
+        <mat-icon>delete</mat-icon> Ta bort produkt
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="datbuttons">
+  <div class="container-button">
+    <button mat-raised-button (click)="openAddDialog()">
+      <mat-icon>add</mat-icon>Lägg till en ny produkt
+    </button>
   </div>
-  
+</div>

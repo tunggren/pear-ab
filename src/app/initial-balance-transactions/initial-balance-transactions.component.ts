@@ -39,9 +39,9 @@ export class InitialBalanceTransactionsComponent implements OnInit {
   updateInitialBalanceTransaction(item: {
     _id: string;
     Product: string;
-    Type: string;
     Location: string;
     Quantity: number;
+    Type: string;
   }): void {
     this.initialBalanceTransactionsService
       .updateInitialBalanceTransactions(item)
@@ -54,9 +54,8 @@ export class InitialBalanceTransactionsComponent implements OnInit {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(InitialBalanceTransactionsDialogComponent, {
       width: '400px',
-      data: { Product: '', Type: '', Location: '', Quantity: null },
+      data: { Product: '', Location: '', Quantity: null, Type: '' },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.addInitialBalanceTransaction(result);

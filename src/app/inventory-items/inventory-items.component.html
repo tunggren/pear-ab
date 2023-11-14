@@ -3,22 +3,38 @@
     <mat-card-content>
       <mat-form-field>
         <h3>Produktnamn</h3>
-        <input matInput placeholder="Produktnamn" [(ngModel)]="item.Product"/>
+        <input matInput placeholder="Produktnamn" [(ngModel)]="item.Product" />
       </mat-form-field>
       <mat-form-field>
         <h3>Antal</h3>
-        <input matInput placeholder="Antal" [(ngModel)]="item.Balance"/>
+        <input matInput placeholder="Antal" [(ngModel)]="item.Balance" />
       </mat-form-field>
       <mat-form-field>
         <h3>Färdigvarulager</h3>
-        <input matInput placeholder="Färdigvarulager" [(ngModel)]="item.Warehouse"/>
+        <input
+          matInput
+          placeholder="Färdigvarulager"
+          [(ngModel)]="item.Warehouse"
+        />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions class="buttons" routerLink="/inventoryitems">
-      <button mat-raised-button class="updatebtn" mat-button (click)="updateInventoryItem(item)"><mat-icon>update</mat-icon>
-        Uppdatera lagersaldot</button>
-      <button mat-raised-button class="deletebtn" mat-button (click)="deleteInventoryItem(item._id)"><mat-icon>delete</mat-icon>
-        Ta bort lagersaldot</button>
+      <button
+        mat-raised-button
+        class="updatebtn"
+        mat-button
+        (click)="updateInventoryItem(item)"
+      >
+        <mat-icon>update</mat-icon> Uppdatera lagersaldot
+      </button>
+      <button
+        mat-raised-button
+        class="deletebtn"
+        mat-button
+        (click)="deleteInventoryItem(item._id)"
+      >
+        <mat-icon>delete</mat-icon> Ta bort lagersaldot
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

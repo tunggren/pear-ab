@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products-dialog',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./products-dialog.component.sass']
 })
 export class ProductsDialogComponent {
+  constructor(
+    public dialogRef: MatDialogRef<ProductsDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

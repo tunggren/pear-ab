@@ -1,7 +1,45 @@
 <div *ngFor="let item of warehousesData">
-    <p>
-      {{ "Lagernamn: " + item.Location }} <br />
-      {{ "Lagernummer: " + item.Warehousenr }} 
-    </p>
+    <mat-card class="data-card">
+      <mat-card-content>
+        <mat-form-field>
+          <h3>Lagernamn</h3>
+          <input
+            matInput
+            placeholder="Lagernamn"
+            [(ngModel)]="item.Location"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <h3>Lagernummer</h3>
+          <input matInput placeholder="Lagernummer" [(ngModel)]="item.Warehousenr" />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="buttons" routerLink="/warehouses">
+        <button
+          mat-raised-button
+          class="updatebtn"
+          mat-button
+          (click)="updateWarehouse(item)"
+        >
+          <mat-icon>update</mat-icon> Uppdatera färdigvarulager
+        </button>
+        <button
+          mat-raised-button
+          class="deletebtn"
+          mat-button
+          (click)="deleteWarehouse(item._id)"
+        >
+          <mat-icon>delete</mat-icon> Ta bort färdigvarulager
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <div class="datbuttons">
+    <div class="container-button">
+      <button mat-raised-button (click)="openAddDialog()">
+        <mat-icon>add</mat-icon>Lägg till ett nytt färdigvarulager
+      </button>
+    </div>
   </div>
   

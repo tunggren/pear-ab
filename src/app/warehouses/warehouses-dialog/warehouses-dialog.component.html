@@ -1,1 +1,18 @@
-<p>warehouses-dialog works!</p>
+<mat-card class="mat-card">
+    <h2>Lägg till ett nytt färdigvarulager</h2>
+    <mat-form-field>
+      <input matInput placeholder="Lagernamn" [(ngModel)]="data.Location" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Lagernummer" [(ngModel)]="data.Warehousenr" />
+    </mat-form-field>
+    <div class="buttons">
+      <button mat-raised-button [mat-dialog-close]="data" cdkFocusInitial>
+        <mat-icon>add</mat-icon>Lägg till
+      </button>
+      <button mat-raised-button (click)="onNoClick()">
+        <mat-icon>cancel</mat-icon> Avbryt
+      </button>
+    </div>
+  </mat-card>
+  

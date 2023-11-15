@@ -37,3 +37,5 @@ export class ProductsService {
   }
 
 }
+
+//Använder services med samma namn som alla collections i databasen, använder dessa för att kunna "prata" med backend

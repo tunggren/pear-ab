@@ -7,13 +7,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   selector: 'app-root',
   templateUrl: './app.component.html', 
   styleUrls: ['./app.component.sass'],
+  //Används för att kunna använda mig av angular animations(bara en fade in när man startar webapplikationen)
   animations: [
     trigger('fadeInOut', [
       state('void', style({
         opacity: 0 
       })),
       transition(':enter, :leave', [
-        animate(500)
+        animate(700)
       ]),
     ])
   ]

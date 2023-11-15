@@ -1,0 +1,24 @@
+<mat-card class="mat-card">
+    <h2>Lägg till en ny transaktion</h2>
+    <mat-form-field>
+      <input matInput placeholder="Produkt" [(ngModel)]="data.Product" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Färdigvarulager" [(ngModel)]="data.Location" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Antal" [(ngModel)]="data.Quantity" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Typ av transaktion" [(ngModel)]="data.Type" />
+    </mat-form-field>
+    <div class="buttons">
+      <button mat-raised-button [mat-dialog-close]="data" cdkFocusInitial>
+        <mat-icon>add</mat-icon>Lägg till
+      </button>
+      <button mat-raised-button (click)="onNoClick()">
+        <mat-icon>cancel</mat-icon> Avbryt
+      </button>
+    </div>
+  </mat-card>
+  

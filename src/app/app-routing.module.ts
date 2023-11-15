@@ -7,6 +7,7 @@ import { ProductsComponent } from './products/products.component';
 import { WarehousesComponent } from './warehouses/warehouses.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'datedtransactions', component: DatedTransactionsComponent },
   { path: 'initialbalancetransactions', component: InitialBalanceTransactionsComponent },
   { path: 'inventoryitems', component: InventoryItemsComponent },

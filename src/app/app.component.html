@@ -1,51 +1,34 @@
-<mat-toolbar color="primary">
+<mat-toolbar [@fadeInOut]>
   <mat-icon>home</mat-icon>
   <span>Päron AB | Lagerhanteringssystem</span>
 </mat-toolbar>
 
 <div class="content-wrapper">
   <div class="container-wrapper">
-    <div class="container">
-      <button mat-button routerLink="/products">Produkter</button>
+    <div class="container" [@fadeInOut]>
+      <button mat-button routerLink="/products"><h2>Produkter</h2></button>
     </div>
 
-    <div class="container">
-      <button mat-button routerLink="/warehouses">Färdigvarulager</button>
+    <div class="container" [@fadeInOut]>
+      <button mat-button routerLink="/warehouses"><h2>Färdigvarulager</h2></button>
     </div>
 
-    <div class="container">
-      <button mat-button routerLink="/inventoryitems">Lagersaldon</button>
+    <div class="container" [@fadeInOut]>
+      <button mat-button routerLink="/inventoryitems"><h2>Lagersaldon</h2></button>
     </div>
 
-    <div class="container">
-      <button mat-button routerLink="/initialbalancetransactions">
-        Starttransaktioner
-      </button>
+    <div class="container" [@fadeInOut]>
+      <button mat-button routerLink="/initialbalancetransactions"><h2>Transaktioner</h2></button>
     </div>
 
-    <div class="container">
-      <button mat-button routerLink="/datedtransactions">
-        Transaktioner med datum
-      </button>
+    <div class="container" [@fadeInOut]>
+      <button mat-button routerLink="/datedtransactions"><h2>Transaktioner med datum</h2></button>
     </div>
   </div>
 </div>
 
-<div class="data">
+
+<div class="data" [@fadeInOut]>
   <router-outlet></router-outlet>
 </div>
 
-<div class="datbuttons">
-  <div class="container-button">
-    <button mat-button><mat-icon>add</mat-icon>Lägg till</button>
-  </div>
-
-  <div class="container-button">
-    <button mat-button><mat-icon>edit</mat-icon>
-      Ändra</button>
-  </div>
-
-  <div class="container-button">
-    <button mat-button><mat-icon>delete</mat-icon>Ta bort</button>
-  </div>
-</div>

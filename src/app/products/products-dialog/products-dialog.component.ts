@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 //Denna komponent används för att lägga till fler documents i databasen i en viss collection(i detta fall products-collectionen)
-
+  
 @Component({
   selector: 'app-products-dialog',
   templateUrl: './products-dialog.component.html',

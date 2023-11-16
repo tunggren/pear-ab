@@ -40,7 +40,7 @@ export class InventoryItemsComponent implements OnInit {
     _id: string;
     Product: string;
     Balance: number;
-    Warehouse: string;
+    Location: string;
   }): void {
     this.inventoryItemsService
     .updateInventoryItems(item)
@@ -53,7 +53,7 @@ export class InventoryItemsComponent implements OnInit {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(InventoryItemsDialogComponent, {
       width: '400px',
-      data: { Product: '', Balance: null, Warehouse: ''},
+      data: { Product: '', Balance: null, Location: ''},
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -66,7 +66,7 @@ export class InventoryItemsComponent implements OnInit {
   addInventoryItem(item: {
     Product: string;
     Balance: number;
-    Warehouse: string;
+    Location: string;
   }): void {
     this.inventoryItemsService.addInventoryItem(item).subscribe(() => {
       this.refreshData();

@@ -45,7 +45,7 @@ export class ProductsComponent implements OnInit {
   updateProduct(item: {
     _id: string;
     Productnr: string;
-    Name: string;
+    Product: string;
     Price: number;
   }): void {
     this.productsService.updateProducts(item).subscribe(() => {
@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(ProductsDialogComponent, {
       width: '400px',
-      data: { Productnr: '', Name: '', Price: null },
+      data: { Productnr: '', Product: '', Price: null },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -71,7 +71,7 @@ export class ProductsComponent implements OnInit {
   //.POST metod
   addProduct(item: {
     Productnr: string;
-    Name: string;
+    Product: string;
     Price: number;
   }): void {
     this.productsService.addProduct(item).subscribe(() => {

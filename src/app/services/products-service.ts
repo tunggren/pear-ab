@@ -16,12 +16,12 @@ export class ProductsService {
     return this.http.get<any[]>(this.apiUrlProducts);
   }
 
-  updateProducts(item: { _id: string, Productnr: String; Price: Number, Name: String }): Observable<void> {
+  updateProducts(item: { _id: string, Productnr: String; Price: Number, Product: String }): Observable<void> {
     const url = `${this.apiUrlProducts}/${item._id}`;
     return this.http.put<void>(url, item);  
   }
 
-  addProduct(item: { Productnr: String; Price: Number, Name: String }): Observable<any> {
+  addProduct(item: { Productnr: String; Price: Number, Product: String }): Observable<any> {
     return this.http.post<void>(this.apiUrlProducts, item)
     .pipe(
       catchError((error) => {
